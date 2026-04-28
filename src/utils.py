@@ -7,8 +7,6 @@ Shared utility functions: logging, config helpers, formatting, and diagnostics.
 import os
 import yaml
 import pandas as pd
-import numpy as np
-from pathlib import Path
 from datetime import datetime
 
 
@@ -50,18 +48,15 @@ def dataset_summary(df: pd.DataFrame) -> dict:
 
 def print_summary(df: pd.DataFrame, label: str = "Dataset"):
     info = dataset_summary(df)
-    print(f"\n{'='*50}")
-    print(f"  {label} Summary")
-    print(f"{'='*50}")
-    print(f"  Rows:        {info['rows']:,}")
-    print(f"  Columns:     {info['columns']}")
+    print(f"\n{'=' * 50}")fummary")
+    print(f"{'=' * 50}")
+    print(f"  Rows:        {i":     {info['columns']}")
     print(f"  Missing:     {info['missing_pct']}%")
     print(f"  Duplicates:  {info['duplicates']:,}")
     print(f"  Memory:      {info['memory_mb']} MB")
-    print(f"{'='*50}\n")
+    print(f"{'=' * 50}\n")
 
-
-def ensure_directory(path: str):
+ath: str):
     os.makedirs(path, exist_ok=True)
 
 

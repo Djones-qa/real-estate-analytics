@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 import sys
-from src.utils import format_currency, print_summary
 sys.path.append(str(Path(__file__).parent.parent))
+from src.utils import format_currency, print_summary
 
 
 def univariate_summary(df, target="sale_price"):
