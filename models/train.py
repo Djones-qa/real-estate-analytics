@@ -16,8 +16,9 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import sys
-from src.utils import load_config
+from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
+from src.utils import load_config  # noqa: E402
 
 
 def prepare_features(df, config, target=None):

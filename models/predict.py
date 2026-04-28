@@ -8,8 +8,9 @@ import joblib
 from pathlib import Path
 from glob import glob
 import sys
-from src.utils import load_config, format_currency
+from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
+from src.utils import load_config, format_currency  # noqa: E402
 
 
 def load_latest_model(model_dir="models/saved_models"):
