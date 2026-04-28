@@ -1,5 +1,7 @@
 # Real Estate Analytics
 
+![CI](https://github.com/Djones-qa/real-estate-analytics/actions/workflows/ci.yml/badge.svg)
+
 A professional-grade data science pipeline for real estate market analysis and property price prediction. This project implements a modular architecture for data ingestion, cleaning, feature engineering, and automated model selection.
 
 ## Features
