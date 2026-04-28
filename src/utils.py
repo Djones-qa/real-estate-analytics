@@ -7,6 +7,7 @@ Shared utility functions: logging, config helpers, formatting, and diagnostics.
 import os
 import yaml
 import pandas as pd
+from pathlib import Path # Re-add missing import
 from datetime import datetime
 
 
@@ -48,17 +49,18 @@ def dataset_summary(df: pd.DataFrame) -> dict:
 
 def print_summary(df: pd.DataFrame, label: str = "Dataset"):
     info = dataset_summary(df)
-    print(f"\n{'=' * 50}")fummary")
+    print(f"\n{'=' * 50}")
     print(f"{'=' * 50}")
-    print(f"  Rows:        {i":     {info['columns']}")
+    print(f"  {label} Summary") # Corrected line
+    print(f"  Rows:        {info['rows']:,}") # Corrected line
+    print(f"  Columns:     {info['columns']}") # Corrected line
     print(f"  Missing:     {info['missing_pct']}%")
     print(f"  Duplicates:  {info['duplicates']:,}")
     print(f"  Memory:      {info['memory_mb']} MB")
     print(f"{'=' * 50}\n")
 
-ath: str):
+def ensure_directory(path: str): # Re-add missing function
     os.makedirs(path, exist_ok=True)
-
 
 def timestamp_filename(base_name: str, extension: str = "csv") -> str:
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
