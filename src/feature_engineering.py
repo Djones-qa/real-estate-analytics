@@ -6,7 +6,6 @@ Derive new features from raw columns to improve model performance.
 
 import pandas as pd
 import numpy as np
-from datetime import datetime
 
 
 def add_temporal_features(df: pd.DataFrame, date_col: str = "sale_date") -> pd.DataFrame:

@@ -8,8 +8,8 @@ import joblib
 from pathlib import Path
 from glob import glob
 import sys
-sys.path.append(str(Path(__file__).parent.parent))
 from src.utils import load_config, format_currency
+sys.path.append(str(Path(__file__).parent.parent))
 
 
 def load_latest_model(model_dir="models/saved_models"):

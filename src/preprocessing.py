@@ -6,7 +6,6 @@ Data cleaning, outlier handling, missing value imputation, and type casting.
 
 import pandas as pd
 import numpy as np
-from typing import Tuple
 
 
 def clean_price_columns(df: pd.DataFrame) -> pd.DataFrame:

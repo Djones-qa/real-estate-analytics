@@ -5,7 +5,6 @@ Hypothesis testing and statistical validation for real estate features.
 """
 
 import pandas as pd
-import numpy as np
 from scipy import stats
 
 

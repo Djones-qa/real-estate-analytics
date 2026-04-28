@@ -16,8 +16,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import sys
-sys.path.append(str(Path(__file__).parent.parent))
 from src.utils import load_config
+sys.path.append(str(Path(__file__).parent.parent))
 
 
 def prepare_features(df, config, target=None):
