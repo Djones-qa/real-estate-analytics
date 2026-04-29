@@ -16,7 +16,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import sys
-from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from src.utils import load_config  # noqa: E402
 
