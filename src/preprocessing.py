@@ -1,4 +1,4 @@
-﻿"""
+﻿﻿"""
 preprocessing.py
 =================
 Data cleaning, outlier handling, missing value imputation, and type casting.
@@ -38,6 +38,9 @@ def handle_missing_values(df: pd.DataFrame, strategy: dict = None) -> pd.DataFra
             method = strategy.get(col, "median")
             if method == "median":
                 df[col] = df[col].fillna(df[col].median())
+                # Ensure types remain consistent if median produced a float for an Int64 column
+                if "Int64" in str(df[col].dtype):
+                    df[col] = df[col].round(0).astype("Int64")
             elif method == "mean":
                 df[col] = df[col].fillna(df[col].mean())
             elif method == "zero":
@@ -90,7 +93,7 @@ def cast_types(df: pd.DataFrame) -> pd.DataFrame:
             df[col] = pd.to_numeric(df[col], errors="coerce")
 
     if "zip_code" in df.columns:
-        df["zip_code"] = df["zip_code"].astype(str).str.zfill(5)
+        df["zip_code"] = df["zip_code"].apply(lambda x: str(int(float(x))).zfill(5) if pd.notna(x) else np.nan)
     return df
 
 

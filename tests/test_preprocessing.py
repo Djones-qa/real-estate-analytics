@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import pytest
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
 from src.preprocessing import clean_price_columns, handle_missing_values
 
 def test_clean_price_columns():
