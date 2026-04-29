@@ -63,6 +63,7 @@ def print_summary(df: pd.DataFrame, label: str = "Dataset"):
 def ensure_directory(path: str):    # Re-add missing function
     os.makedirs(path, exist_ok=True)
 
+
 def timestamp_filename(base_name: str, extension: str = "csv") -> str:
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     return f"{base_name}_{ts}.{extension}"
